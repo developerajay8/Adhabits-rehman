@@ -1,0 +1,183 @@
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
+import { FaHeart, FaRegClock, FaShare } from "react-icons/fa";
+import Ctablock from "./ctablock";
+import { FaArrowDownLong } from "react-icons/fa6";
+
+const videos = [
+  {
+    id: 1,
+    embed: "https://www.youtube.com/embed/cxCnF8go0MM",
+    thumbnail: "/video-thumb-1.jpg",
+    caption: "Hey this is...",
+  },
+  {
+    id: 2,
+    embed: "https://www.youtube.com/embed/vBWFbX9u3EU",
+    thumbnail: "/video-thumb-2.jpg",
+    caption: "I'm extremely...",
+  },
+];
+
+function VideoCard({
+  video,
+  activeId,
+  setActiveId,
+}: {
+  video: (typeof videos)[0];
+  activeId: number | null;
+  setActiveId: (id: number | null) => void;
+}) {
+  const [showMenu, setShowMenu] = useState(false);
+  const isActive = activeId === video.id;
+
+  return (
+    <div
+      className={`relative 
+        w-[240px] sm:w-52 md:w-[280px]   /* ✅ better responsive */
+        flex-shrink-0 mt-4 rounded-2xl overflow-hidden shadow-2xl shadow-black/50 
+        border border-white/10 bg-zinc-900 aspect-[9/16] 
+        group cursor-pointer transition-all duration-500 
+        ${isActive ? "scale-105 z-20" : ""}
+      `}
+      onClick={() => setActiveId(isActive ? null : video.id)}
+    >
+      {/* Active Video */}
+      {isActive ? (
+        <iframe
+          src={video.embed + "?autoplay=1&mute=1"}
+          className="absolute  inset-0 w-full h-full"
+          allow="autoplay; encrypted-media"
+          allowFullScreen
+        />
+      ) : (
+        <>
+          {/* Thumbnail */}
+          <div className="absolute inset-0">
+            <Image
+              src={video.thumbnail || "/default-thumb.jpg"} // ✅ fallback
+              alt="Video testimonial"
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/80" />
+          </div>
+
+          {/* Play Button */}
+          <div className="absolute inset-0 flex items-center justify-center z-10">
+            <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-full bg-white/15 backdrop-blur-sm border border-white/30 flex items-center justify-center group-hover:bg-white/25 transition">
+              <svg
+                className="w-4 h-4 sm:w-6 sm:h-6 text-white ml-0.5"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M8 5.14v14l11-7-11-7z" />
+              </svg>
+            </div>
+          </div>
+        </>
+      )}
+
+      {/* Top-right menu */}
+      <div
+        className="absolute top-2.5 right-2.5 z-20"
+        onClick={(e) => {
+          e.stopPropagation();
+          setShowMenu(!showMenu);
+        }}
+      >
+        <div className="flex gap-[3px] flex-col items-center">
+          {[...Array(3)].map((_, i) => (
+            <div key={i} className="w-1 h-1 rounded-full bg-white/70" />
+          ))}
+        </div>
+      </div>
+
+      {/* More Options Panel */}
+      {showMenu && (
+        <div
+          onClick={(e) => e.stopPropagation()}
+          className="absolute top-0 right-0 w-[200px] sm:w-[220px] h-full bg-black/95 backdrop-blur-md z-30 p-4 border-l border-white/10"
+        >
+          <div className="flex justify-between items-center mb-4">
+            <p className="text-white text-sm font-semibold">
+              More options
+            </p>
+            <button
+              onClick={() => setShowMenu(false)}
+              className="text-white"
+            >
+              ✕
+            </button>
+          </div>
+
+          <div className="flex flex-col gap-4 text-white/80 text-sm">
+            <button className="flex items-center gap-2 hover:text-white">
+              <FaHeart /> Like
+            </button>
+            <button className="flex items-center gap-2 hover:text-white">
+              <FaRegClock /> Add to Watch Later
+            </button>
+            <button className="flex items-center gap-2 hover:text-white">
+              <FaShare /> Share
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Caption */}
+      <div className="absolute bottom-6 sm:bottom-10 left-0 right-0 px-2 sm:px-3 z-10">
+        <div className="inline-block bg-black/60 backdrop-blur-sm rounded-md px-2 py-1">
+          <p className="font-nunito text-white text-[10px] sm:text-sm font-semibold">
+            {video.caption}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function VideoTestimonialsSection() {
+  const [activeId, setActiveId] = useState<number | null>(null);
+
+  return (
+    <section className="w-full bg-white bg-[linear-gradient(rgba(0,0,0,0.055)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.055)_1px,transparent_1px)] bg-[size:40px_40px] pt-16 sm:pt-20 pb-6">
+      <div className="max-w-[1080px] mx-auto px-4 sm:px-6">
+
+        {/* Heading */}
+        <h2 className="font-barlow font-[600] text-black text-xl sm:text-3xl md:text-4xl text-center mb-8 sm:mb-12">
+          Systems Chosen By{" "}
+          <span className="text-[#f35014]">Top Performing Affiliates</span>
+        </h2>
+
+        {/* Cards */}
+        <div className="flex justify-center gap-3 sm:gap-6 md:gap-8 flex-wrap sm:flex-nowrap">
+          {videos.map((video) => (
+            <VideoCard
+              key={video.id}
+              video={video}
+              activeId={activeId}
+              setActiveId={setActiveId}
+            />
+          ))}
+        </div>
+
+        {/* Bottom Icon */}
+        <div className="flex justify-center mt-10">
+          <div className="flex flex-col items-center gap-2 text-[#ff4d14] text-xl sm:text-2xl animate-pulse">
+            <FaArrowDownLong />
+            <FaArrowDownLong />
+            <FaArrowDownLong />
+          </div>
+        </div>
+
+        {/* CTA */}
+        <div className="relative z-10 w-full max-w-[1080px] mx-auto flex flex-col items-center text-center px-4 sm:px-6 lg:px-8 pt-10">
+          <Ctablock />
+        </div>
+      </div>
+    </section>
+  );
+}
