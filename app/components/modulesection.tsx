@@ -26,13 +26,13 @@ const modules = [
     ],
   },
   {
-    title: "Content Monetization System",
+    title: "High-Ticket Closing System",
     points: [
-      "Content se income kaise generate kare",
-      "Reels + hooks that convert",
-      "Authority build ka framework",
-      "Offer positioning strategy",
-      "Scaling with automation",
+      "Leads ko buyers me convert kaise kare",
+      "WhatsApp closing framework",
+      "Follow-up system (jo sales laata hai)",
+      "Real case studies (lead -> sale)",
+      "Scaling mindset & execution",
     ],
   },
 ];
@@ -66,7 +66,7 @@ export default function ModulesSections() {
             <div className="lg:sticky lg:top-24 h-fit">
               <div className="rounded-2xl overflow-hidden shadow-xl">
                 <img
-                  src="/IMG_9023.PNG" // replace
+                  src="/image copy.png" // replace
                   alt="mastermind"
                   className="w-full md:h-[600px]  object-cover"
                 />
