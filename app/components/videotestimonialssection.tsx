@@ -35,7 +35,7 @@ function VideoCard({
       className={`relative 
         w-[50%] sm:w-52 md:w-[320px]
         flex-shrink-0 mt-4 rounded-2xl overflow-hidden shadow-2xl shadow-black/50 
-        border border-white/10 bg-zinc-900 aspect-[9/16] 
+        border-2 border-white bg-zinc-900 aspect-[9/16] 
         group cursor-pointer transition-all duration-500 
         ${isActive ? "scale-105 z-20" : ""}
       `}
@@ -60,7 +60,9 @@ function VideoCard({
   muted
   preload="metadata"
 />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/80" />
+            <div className="absolute inset-0 bg-[#f35014] " >
+              {/* <img src="image copy 3.png" className="h-full w-full" alt="" /> */}
+            </div>
           </div>
 
           {/* ▶ Play Button */}
