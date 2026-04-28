@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { FaHeart, FaRegClock, FaShare } from "react-icons/fa";
 import Ctablock from "./ctablock";
 import { FaArrowDownLong } from "react-icons/fa6";
@@ -9,24 +8,15 @@ import { FaArrowDownLong } from "react-icons/fa6";
 const videos = [
   {
     id: 1,
-    embed: "https://www.youtube.com/embed/cxCnF8go0MM",
+    src: "/videos/IMG_4275.MP4",
     caption: "Hey this is...",
   },
   {
     id: 2,
-    embed: "https://www.youtube.com/embed/vBWFbX9u3EU",
+    src: "/videos/IMG_5203.MP4",
     caption: "I'm extremely...",
   },
 ];
-
-// ✅ safer ID extractor
-const getYouTubeId = (url: string) => {
-  try {
-    return url.split("/embed/")[1]?.split("?")[0];
-  } catch {
-    return "";
-  }
-};
 
 function VideoCard({
   video,
@@ -39,11 +29,6 @@ function VideoCard({
 }) {
   const [showMenu, setShowMenu] = useState(false);
   const isActive = activeId === video.id;
-
-  const videoId = getYouTubeId(video.embed);
-
-  // ✅ stable thumbnail
-  const thumbnail = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
 
   return (
     <div
@@ -58,25 +43,23 @@ function VideoCard({
     >
       {/* Active Video */}
       {isActive ? (
-        <iframe
-          src={video.embed + "?autoplay=1&mute=1"}
-          className="absolute inset-0 w-full h-full"
-          allow="autoplay; encrypted-media"
-          allowFullScreen
+        <video
+          src={video.src}
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          muted
+          controls
+          playsInline
         />
       ) : (
         <>
-          {/* ✅ Thumbnail */}
+          {/* ✅ VIDEO AS THUMBNAIL */}
           <div className="absolute inset-0">
-            <Image
-              src={thumbnail}
-              alt="Video thumbnail"
-              fill
-              className="object-cover group-hover:scale-105 transition-transform duration-500"
-              onError={(e) => {
-                (e.currentTarget as HTMLImageElement).src =
-                  `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
-              }}
+            <video
+              src={video.src}
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              muted
+              preload="metadata"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/80" />
           </div>
@@ -144,13 +127,13 @@ function VideoCard({
       )}
 
       {/* Caption */}
-      <div className="absolute bottom-6 sm:bottom-10 left-0 right-0 px-2 sm:px-3 z-10">
+      {/* <div className="absolute bottom-6 sm:bottom-10 left-0 right-0 px-2 sm:px-3 z-10">
         <div className="inline-block bg-black/60 backdrop-blur-sm rounded-md px-2 py-1">
           <p className="font-nunito text-white text-[10px] sm:text-sm font-semibold">
             {video.caption}
           </p>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
