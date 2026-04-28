@@ -17,7 +17,7 @@ const testimonials = [
 
 const ClientTestimonials = () => {
   return (
-    <section className="bg-[#0a0a0a] py-20 px-4 font-sans overflow-hidden">
+    <section className="bg-[#0a0a0a] sm:pt-16 pt-16 px-4 font-sans overflow-hidden">
       <div className="max-w-7xl mx-auto text-center mb-12">
         {/* Title Section */}
        
@@ -66,7 +66,7 @@ const ClientTestimonials = () => {
 
        {/* Bottom Icon */}
               <div className="flex justify-center mt-10">
-                <div className="flex flex-col items-center gap-2 text-[#ff4d14] text-2xl animate-pulse">
+                <div className="flex flex-col items-center gap-2 text-[#ff4d14] sm:text-2xl animate-pulse">
                   <FaArrowDownLong />
                   <FaArrowDownLong />
                   <FaArrowDownLong />

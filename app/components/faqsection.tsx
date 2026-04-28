@@ -32,7 +32,7 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="w-full bg-black py-16 px-4">
+    <section className="w-full bg-black sm:pt-16 pt-16 px-4">
       <div className="max-w-[800px] mx-auto">
 
         {/* Heading */}
@@ -96,14 +96,14 @@ export default function FAQSection() {
 
         {/* Bottom Icon */}
         <div className="flex justify-center mt-10">
-          <div className="flex flex-col items-center gap-2 text-[#ff4d14] text-2xl animate-pulse">
+          <div className="flex flex-col items-center gap-2 text-[#ff4d14] sm:text-2xl animate-pulse">
             <FaArrowDownLong />
             <FaArrowDownLong />
             <FaArrowDownLong />
           </div>
         </div>
 
-        <div className="relative z-10 w-full max-w-[1080px] mx-auto flex flex-col items-center text-center px-4 sm:px-6 lg:px-8 pt-10">
+        <div className="relative pb-20 z-10 w-full max-w-[1080px] mx-auto flex flex-col items-center text-center px-4 sm:px-6 lg:px-8 pt-10">
                 <Ctablock/>
                 </div>
 

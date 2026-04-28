@@ -6,7 +6,7 @@ import Ctablock from "./ctablock";
 
 export default function CoachSection() {
   return (
-    <section className="w-full bg-black py-16 px-4">
+    <section className="w-full bg-black sm:pt-16 pt-16 px-4">
       <div className="max-w-[1080px] mx-auto border-4 border-[#ff4d14] rounded-[28px] p-6 sm:p-10 bg-gradient-to-r from-[#0f0f0f] via-[#1a1a1a] to-[#0f0f0f] shadow-[0_0_60px_rgba(255,80,0,0.15)]">
 
         {/* Heading */}
@@ -17,6 +17,25 @@ export default function CoachSection() {
 
         <div className="flex flex-col lg:flex-row items-center gap-10">
 
+{/* RIGHT IMAGE */}
+          <div className="sm:hidden block">
+          <div className="flex-1 flex justify-center relative">
+
+            {/* Glow background */}
+            <div className="absolute w-[280px] h-[280px] bg-[#ff4d14]/30 blur-[80px] rounded-full" />
+
+            {/* Image Placeholder (replace with your image) */}
+            <div className="relative z-10 w-[220px] sm:w-[260px] md:w-[340px]">
+              <img
+                src="ChatGPT_Image_Apr_27__2026__02_23_39_PM-removebg-preview.png" // 👈 replace here
+                alt="coach"
+                className="w-full object-contain"
+              />
+
+              
+            </div>
+          </div>
+          </div>
           {/* LEFT CONTENT */}
           <div className="flex-1">
 
@@ -81,6 +100,7 @@ export default function CoachSection() {
 
 
           {/* RIGHT IMAGE */}
+          <div className="sm:block hidden">
           <div className="flex-1 flex justify-center relative">
 
             {/* Glow background */}
@@ -97,11 +117,12 @@ export default function CoachSection() {
               
             </div>
           </div>
+          </div>
         </div>
       </div>
       {/* Bottom Icon */}
               <div className="flex justify-center mt-10">
-                <div className="flex flex-col items-center gap-2 text-[#ff4d14] text-2xl animate-pulse">
+                <div className="flex flex-col items-center gap-2 text-[#ff4d14] sm:text-2xl animate-pulse">
                   <FaArrowDownLong />
                   <FaArrowDownLong />
                   <FaArrowDownLong />

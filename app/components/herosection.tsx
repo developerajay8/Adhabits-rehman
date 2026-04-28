@@ -76,7 +76,7 @@ export default function Herosection() {
 Learn how to turn leads into consistent affiliate income using proven strategies, real guidance, and a system built from working with 900+ affiliates        </p>
         {/* Bottom Icon */}
                       <div className="flex justify-center mb-8">
-                        <div className="flex flex-col items-center gap-2 text-[#ff4d14] text-2xl animate-pulse">
+                        <div className="flex flex-col items-center gap-2 text-[#ff4d14] sm:text-2xl animate-pulse">
                           <FaArrowDownLong />
                           
                           <FaArrowDownLong />

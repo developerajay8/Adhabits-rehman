@@ -20,7 +20,7 @@ const rightItems = [
 
 export default function ContentCashSystem() {
   return (
-    <section className="w-full bg-white py-16 px-4">
+    <section className="w-full bg-white sm:pt-16 pt-16 px-4">
         <div className="bg-black max-w-[1080px] mx-auto border-4 border-[#ff4d14] rounded-[28px]  p-4">
       <div className="x bg-gradient-to-r from-[#0f0f0f] via-[#1a1a1a] to-[#0f0f0f] rounded-2xl  p-4 shadow-[0_0_60px_rgba(255,80,0,0.15)]">
             <div className="absolute w-[280px] h-[280px] bg-[#ff4d14]/30 blur-[80px] rounded-full" />
@@ -56,7 +56,7 @@ export default function ContentCashSystem() {
 
       {/* Bottom Icon */}
               <div className="flex justify-center mt-10">
-                <div className="flex flex-col items-center gap-2 text-[#ff4d14] text-2xl animate-pulse">
+                <div className="flex flex-col items-center gap-2 text-[#ff4d14] sm:text-2xl animate-pulse">
                   <FaArrowDownLong />
                   <FaArrowDownLong />
                   <FaArrowDownLong />

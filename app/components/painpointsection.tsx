@@ -40,7 +40,7 @@ const items = [
 
 export default function PainPointsSection() {
   return (
-    <section className="w-full bg-black py-16 px-4">
+    <section className="w-full bg-black sm:pt-16 pt-16 px-4">
       <div className="max-w-[1080px] mx-auto rounded-2xl border border-white/10 bg-gradient-to-b from-[#111] to-[#0a0a0a] p-6 sm:p-6 shadow-[0_0_60px_rgba(255,80,0,0.08)]">
 
         {/* Heading */}
@@ -79,7 +79,7 @@ export default function PainPointsSection() {
 
       {/* Bottom Icon */}
                     <div className="flex justify-center mt-10">
-                      <div className="flex flex-col items-center gap-2 text-[#ff4d14] text-2xl animate-pulse">
+                      <div className="flex flex-col items-center gap-2 text-[#ff4d14] sm:text-2xl animate-pulse">
                         <FaArrowDownLong />
                         <FaArrowDownLong />
                         <FaArrowDownLong />

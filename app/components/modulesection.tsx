@@ -41,7 +41,7 @@ export default function ModulesSections() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section className="w-full bg-[#f3f3f3] py-16 px-4">
+    <section className="w-full bg-[#f3f3f3] sm:pt-16 pt-16 px-4">
       <div className="max-w-[1080px] mx-auto">
 
         {/* Heading */}
@@ -115,7 +115,7 @@ export default function ModulesSections() {
 
       {/* Bottom Icon */}
                             <div className="flex justify-center mt-10">
-                              <div className="flex flex-col items-center gap-2 text-[#ff4d14] text-2xl animate-pulse">
+                              <div className="flex flex-col items-center gap-2 text-[#ff4d14] sm:text-2xl animate-pulse">
                                 <FaArrowDownLong />
                                 <FaArrowDownLong />
                                 <FaArrowDownLong />
