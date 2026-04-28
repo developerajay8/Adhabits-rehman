@@ -43,24 +43,23 @@ function VideoCard({
     >
       {/* Active Video */}
       {isActive ? (
-        <video
-          src={video.src}
-          className="absolute inset-0 w-full h-full object-cover"
-          autoPlay
-          muted
-          controls
-          playsInline
-        />
-      ) : (
+  <video
+    src={video.src}
+    className="absolute inset-0 w-full h-full object-cover"
+    autoPlay
+    controls
+    playsInline
+  />
+) : (
         <>
           {/* ✅ VIDEO AS THUMBNAIL */}
           <div className="absolute inset-0">
-            <video
-              src={video.src}
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              muted
-              preload="metadata"
-            />
+           <video
+  src={video.src}
+  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+  muted
+  preload="metadata"
+/>
             <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/80" />
           </div>
 

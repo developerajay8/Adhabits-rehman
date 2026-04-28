@@ -6,12 +6,14 @@ import Ctablock from './ctablock';
 // Mock data for the testimonials
 // Replace the 'image' paths with your actual screenshot paths
 const testimonials = [
-  { id: 1, image: "/c1.png" },
-  { id: 2, image: "c2.png" },
-  { id: 3, image: "c3.png" },
-  { id: 4, image: "c4.png" },
-  { id: 4, image: "c5.png" },
-  { id: 4, image: "c5.png" },
+  { id: 1, image: "/image 7.png" },
+  { id: 2, image: "image 8.png" },
+  { id: 3, image: "image 9.png" },
+  { id: 4, image: "image 10.png" },
+  { id: 4, image: "image 11.png" },
+  // { id: 4, image: "image 12.png" },
+  // { id: 4, image: "image 13.png" },
+  // { id: 4, image: "image 14.png" },
   // Add more to make the loop seamless
 ];
 
@@ -56,7 +58,7 @@ const ClientTestimonials = () => {
                 <img 
                   src={item.image} 
                   alt={`Client Testimonial ${item.id}`}
-                  className="sm:w-[300px] w-[270px] sm:h-[560px] h-[500px] object-cover"
+                  className=" w-[225px] h-[440px] object-cover"
                 />
               </div>
             </div>

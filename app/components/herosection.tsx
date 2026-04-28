@@ -17,9 +17,16 @@ export default function Herosection() {
           src="/bghero.png"
           alt="Background"
           fill
-          className="object-cover object-center opacity-40"
+          className="object-cover sm:block hidden object-center opacity-40"
           priority
         />
+        {/* <Image
+          src="/bghero.png"
+          alt="Background"
+          fill
+          className="object-cover sm:hidden block opacity-80"
+          priority
+        /> */}
         {/* Radial dark vignette from center */}
         {/* <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,rgba(0,0,0,0.1),rgba(0,0,0,0.7))]" /> */}
         {/* Bottom fade to solid black */}
@@ -29,20 +36,28 @@ export default function Herosection() {
       </div>
 
       {/* ── HERO CONTENT ── */}
-      <div className="relative z-10 w-full max-w-[1080px] mx-auto flex flex-col items-center text-center px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 w-full max-w-[1080px] mx-auto flex flex-col items-center text-center ">
 
         {/* ── PRESENTER IMAGE ──
           Replace /presenter.png with your actual presenter cutout image.
           Use a PNG with a transparent background for the best result.
           The image will appear standing above the content.
         */}
-        <div className="relative mt-4 sm:mt-6 ">
+        <div className="relative mt-4 sm:mt-6 sm:block hidden">
           <img
             src="ChatGPT_Image_Apr_27__2026__11_32_42_AM_1-removebg-preview.png"
             alt="Workshop Presenter"
             className=""
           />
         </div>
+        <div className="relative  sm:hidden block">
+          <img
+            src="mee-landing-page-pic.png"
+            alt="Workshop Presenter"
+            className=""
+          />
+        </div>
+
 
         {/* ── WORKSHOP LOGO ── */}
         {/* <div className="flex flex-col items-center -mt-3 mb-4 sm:mb-5">
@@ -58,7 +73,8 @@ export default function Herosection() {
         </div> */}
 
         {/* ── LIVE BADGE ── */}
-        <div className="inline-flex items-center gap-2.5 border border-[#ff4602] bg-[#0a1617] backdrop-blur-sm rounded-full px-2 sm:px-14 py-1.5 sm:py-2 mb-7 sm:mb-8">
+        <div className="px-4 sm:px-6 lg:px-8">
+        <div className=" inline-flex items-center gap-2.5 border border-[#ff4602] bg-[#0a1617] backdrop-blur-sm rounded-full px-2 sm:px-14 py-1.5 sm:py-2 mb-7 sm:mb-8">
           <span className="w-3 h-3 rounded-full bg-red-500 animate-pulse flex-shrink-0" />
           <span className="font-nunito text-[#ff4602] text-[10px] sm:text-xs font-semibold tracking-[0.2em] uppercase">
             LIVE WORKSHOP ON ZOOM: 3rd May
@@ -85,6 +101,8 @@ Learn how to turn leads into consistent affiliate income using proven strategies
                       </div>
 
 <Ctablock/>
+</div>
+
       </div>
     </main>
   );
