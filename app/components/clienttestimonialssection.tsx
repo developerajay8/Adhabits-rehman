@@ -52,11 +52,11 @@ const ClientTestimonials = () => {
               key={item.id} 
               className="mx-3 transform transition-transform duration-300 hover:scale-105"
             >
-              <div className=" rounded-[2rem] overflow-hidden border border-gray-800 shadow-2xl shadow-black/50">
+              <div className=" rounded-[14px] overflow-hidden border border-gray-800 shadow-2xl shadow-black/50">
                 <img 
                   src={item.image} 
                   alt={`Client Testimonial ${item.id}`}
-                  className="w-full h-auto object-cover"
+                  className="sm:w-[300px] w-[270px] sm:h-[560px] h-[500px] object-cover"
                 />
               </div>
             </div>
