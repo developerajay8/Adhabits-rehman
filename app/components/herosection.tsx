@@ -82,7 +82,7 @@ export default function Herosection() {
         </div>
 
         {/* ── MAIN HEADLINE ── */}
-        <h1 className="font-inter font-[600]  mb-3 sm:mb-4  lg:text-[35px] md:text-[28px] text-[26px]">
+        <h1 className="font-inter font-[600]  mb-3 sm:mb-4  lg:text-[38px] md:text-[28px] text-[26px]">
           <span className="text-[#fff] font-inter">Struggling To Get Sales In Affiliate Marketing? </span>
           <span className="text-[#ff4602] font-inter">I'll Help You Build A System That Generates High-Quality Leads & High-Ticket Closings</span>
         </h1>
