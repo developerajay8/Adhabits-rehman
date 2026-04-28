@@ -1,7 +1,7 @@
 "use client";
 
 import { FaInstagram, FaFacebookF, FaYoutube } from "react-icons/fa";
-import { FaArrowDownLong } from "react-icons/fa6";
+import { MdKeyboardArrowDown } from "react-icons/md";
 import Ctablock from "./ctablock";
 
 export default function CoachSection() {
@@ -122,10 +122,10 @@ export default function CoachSection() {
       </div>
       {/* Bottom Icon */}
               <div className="flex justify-center mt-10">
-                <div className="flex flex-col items-center gap-2 text-[#ff4d14] sm:text-2xl animate-pulse">
-                  <FaArrowDownLong />
-                  <FaArrowDownLong />
-                  <FaArrowDownLong />
+                <div className="flex flex-col items-center text-[#ff4d14] sm:text-2xl animate-pulse">
+                  <MdKeyboardArrowDown />
+                  <MdKeyboardArrowDown />
+                  <MdKeyboardArrowDown />
                 </div>
               </div>
       

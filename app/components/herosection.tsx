@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Ctablock from "./ctablock";
-import { FaArrowDownLong } from "react-icons/fa6";
+import { MdKeyboardArrowDown } from "react-icons/md";
 
 export default function Herosection() {
 
@@ -88,15 +88,15 @@ export default function Herosection() {
         </h1>
 
         {/* ── SUB TEXT ── */}
-        <p className="font-nunito text-white max-w-[800px] text-[16px] md:text-[20px] leading-relaxed mb-4">
+        <p className="font-nunito text-white max-w-[800px] text-center mx-auto text-[16px] md:text-[20px] leading-relaxed mb-4">
 Learn how to turn leads into consistent affiliate income using proven strategies, real guidance, and a system built from working with 900+ affiliates        </p>
         {/* Bottom Icon */}
                       <div className="flex justify-center mb-8">
-                        <div className="flex flex-col items-center gap-2 text-[#ff4d14] sm:text-2xl animate-pulse">
-                          <FaArrowDownLong />
+                        <div className="flex flex-col items-center text-[#ff4d14] sm:text-2xl animate-pulse">
+                          <MdKeyboardArrowDown />
                           
-                          <FaArrowDownLong />
-                          <FaArrowDownLong />
+                          <MdKeyboardArrowDown />
+                          <MdKeyboardArrowDown />
                         </div>
                       </div>
 

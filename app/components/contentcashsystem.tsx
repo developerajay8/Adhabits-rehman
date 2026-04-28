@@ -2,7 +2,7 @@
 
 import { Check } from "lucide-react";
 import Ctablock from "./ctablock";
-import { FaArrowDownLong } from "react-icons/fa6";
+import { MdKeyboardArrowDown } from "react-icons/md";
 
 const leftItems = [
   "You stop depending on luck and start following a system",
@@ -56,10 +56,10 @@ export default function ContentCashSystem() {
 
       {/* Bottom Icon */}
               <div className="flex justify-center mt-10">
-                <div className="flex flex-col items-center gap-2 text-[#ff4d14] sm:text-2xl animate-pulse">
-                  <FaArrowDownLong />
-                  <FaArrowDownLong />
-                  <FaArrowDownLong />
+                <div className="flex flex-col items-center text-[#ff4d14] sm:text-2xl animate-pulse">
+                  <MdKeyboardArrowDown />
+                  <MdKeyboardArrowDown />
+                  <MdKeyboardArrowDown />
                 </div>
               </div>
       

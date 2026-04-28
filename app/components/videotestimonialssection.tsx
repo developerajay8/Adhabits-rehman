@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { FaHeart, FaRegClock, FaShare } from "react-icons/fa";
 import Ctablock from "./ctablock";
-import { FaArrowDownLong } from "react-icons/fa6";
+import { MdKeyboardArrowDown } from "react-icons/md";
 
 const videos = [
   {
@@ -161,10 +161,10 @@ export default function VideoTestimonialsSection() {
         </div>
 
         <div className="flex justify-center mt-10">
-          <div className="flex flex-col items-center gap-2 text-[#ff4d14] text-xl sm:text-2xl animate-pulse">
-            <FaArrowDownLong />
-            <FaArrowDownLong />
-            <FaArrowDownLong />
+          <div className="flex flex-col items-center text-[#ff4d14] sm:text-2xl animate-pulse">
+            <MdKeyboardArrowDown />
+            <MdKeyboardArrowDown />
+            <MdKeyboardArrowDown />
           </div>
         </div>
 

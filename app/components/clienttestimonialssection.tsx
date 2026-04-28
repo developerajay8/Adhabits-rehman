@@ -1,7 +1,7 @@
 import React from 'react';
 import Marquee from 'react-fast-marquee';
-import { FaArrowDownLong } from 'react-icons/fa6';
 import Ctablock from './ctablock';
+import { MdKeyboardArrowDown } from 'react-icons/md';
 
 // Mock data for the testimonials
 // Replace the 'image' paths with your actual screenshot paths
@@ -68,10 +68,10 @@ const ClientTestimonials = () => {
 
        {/* Bottom Icon */}
               <div className="flex justify-center mt-10">
-                <div className="flex flex-col items-center gap-2 text-[#ff4d14] sm:text-2xl animate-pulse">
-                  <FaArrowDownLong />
-                  <FaArrowDownLong />
-                  <FaArrowDownLong />
+                <div className="flex flex-col items-center text-[#ff4d14] sm:text-2xl animate-pulse">
+                  <MdKeyboardArrowDown />
+                  <MdKeyboardArrowDown />
+                  <MdKeyboardArrowDown />
                 </div>
               </div>
       
