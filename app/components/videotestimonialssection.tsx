@@ -142,7 +142,7 @@ export default function VideoTestimonialsSection() {
   const [activeId, setActiveId] = useState<number | null>(null);
 
   return (
-    <section className="w-full bg-white bg-[linear-gradient(rgba(0,0,0,0.055)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.055)_1px,transparent_1px)] bg-[size:40px_40px] pt-16 sm:pt-20 pb-6">
+    <section className="w-full bg-white bg-[linear-gradient(rgba(0,0,0,0.055)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.055)_1px,transparent_1px)] bg-[size:40px_40px] pt-10 sm:pt-20 ">
       <div className="max-w-[1080px] mx-auto px-4 sm:px-6">
 
         <h2 className="font-barlow font-[600] text-black text-xl sm:text-3xl md:text-4xl text-center mb-8 sm:mb-12">
