@@ -58,7 +58,7 @@ export default function Herosection() {
         </div> */}
 
         {/* ── LIVE BADGE ── */}
-        <div className="inline-flex items-center gap-2.5 border border-[#ff4602] bg-[#0a1617] backdrop-blur-sm rounded-full px-4 sm:px-14 py-1.5 sm:py-2 mb-7 sm:mb-8">
+        <div className="inline-flex items-center gap-2.5 border border-[#ff4602] bg-[#0a1617] backdrop-blur-sm rounded-full px-2 sm:px-14 py-1.5 sm:py-2 mb-7 sm:mb-8">
           <span className="w-3 h-3 rounded-full bg-red-500 animate-pulse flex-shrink-0" />
           <span className="font-nunito text-[#ff4602] text-[10px] sm:text-xs font-semibold tracking-[0.2em] uppercase">
             LIVE WORKSHOP ON ZOOM: 3rd May
@@ -67,8 +67,8 @@ export default function Herosection() {
 
         {/* ── MAIN HEADLINE ── */}
         <h1 className="font-inter font-[600]  mb-3 sm:mb-4  lg:text-[35px] md:text-[28px] text-[26px]">
-          <span className="text-[#fff] ">Struggling To Get Sales In Affiliate Marketing? </span>
-          <span className="text-[#ff4602] ">I'll Help You Build A System That Generates High-Quality Leads & High-Ticket Closings</span>
+          <span className="text-[#fff] font-inter">Struggling To Get Sales In Affiliate Marketing? </span>
+          <span className="text-[#ff4602] font-inter">I'll Help You Build A System That Generates High-Quality Leads & High-Ticket Closings</span>
         </h1>
 
         {/* ── SUB TEXT ── */}

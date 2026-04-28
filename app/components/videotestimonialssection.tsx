@@ -10,16 +10,23 @@ const videos = [
   {
     id: 1,
     embed: "https://www.youtube.com/embed/cxCnF8go0MM",
-    thumbnail: "/video-thumb-1.jpg",
     caption: "Hey this is...",
   },
   {
     id: 2,
     embed: "https://www.youtube.com/embed/vBWFbX9u3EU",
-    thumbnail: "/video-thumb-2.jpg",
     caption: "I'm extremely...",
   },
 ];
+
+// ✅ safer ID extractor
+const getYouTubeId = (url: string) => {
+  try {
+    return url.split("/embed/")[1]?.split("?")[0];
+  } catch {
+    return "";
+  }
+};
 
 function VideoCard({
   video,
@@ -33,10 +40,15 @@ function VideoCard({
   const [showMenu, setShowMenu] = useState(false);
   const isActive = activeId === video.id;
 
+  const videoId = getYouTubeId(video.embed);
+
+  // ✅ stable thumbnail
+  const thumbnail = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+
   return (
     <div
       className={`relative 
-        w-[240px] sm:w-52 md:w-[280px]   /* ✅ better responsive */
+        w-[240px] sm:w-52 md:w-[320px]
         flex-shrink-0 mt-4 rounded-2xl overflow-hidden shadow-2xl shadow-black/50 
         border border-white/10 bg-zinc-900 aspect-[9/16] 
         group cursor-pointer transition-all duration-500 
@@ -48,24 +60,28 @@ function VideoCard({
       {isActive ? (
         <iframe
           src={video.embed + "?autoplay=1&mute=1"}
-          className="absolute  inset-0 w-full h-full"
+          className="absolute inset-0 w-full h-full"
           allow="autoplay; encrypted-media"
           allowFullScreen
         />
       ) : (
         <>
-          {/* Thumbnail */}
+          {/* ✅ Thumbnail */}
           <div className="absolute inset-0">
             <Image
-              src={video.thumbnail || "/default-thumb.jpg"} // ✅ fallback
-              alt="Video testimonial"
+              src={thumbnail}
+              alt="Video thumbnail"
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-500"
+              onError={(e) => {
+                (e.currentTarget as HTMLImageElement).src =
+                  `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
+              }}
             />
             <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/80" />
           </div>
 
-          {/* Play Button */}
+          {/* ▶ Play Button */}
           <div className="absolute inset-0 flex items-center justify-center z-10">
             <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-full bg-white/15 backdrop-blur-sm border border-white/30 flex items-center justify-center group-hover:bg-white/25 transition">
               <svg
@@ -80,7 +96,7 @@ function VideoCard({
         </>
       )}
 
-      {/* Top-right menu */}
+      {/* Menu Button */}
       <div
         className="absolute top-2.5 right-2.5 z-20"
         onClick={(e) => {
@@ -95,7 +111,7 @@ function VideoCard({
         </div>
       </div>
 
-      {/* More Options Panel */}
+      {/* Options Panel */}
       {showMenu && (
         <div
           onClick={(e) => e.stopPropagation()}
@@ -118,7 +134,7 @@ function VideoCard({
               <FaHeart /> Like
             </button>
             <button className="flex items-center gap-2 hover:text-white">
-              <FaRegClock /> Add to Watch Later
+              <FaRegClock /> Watch Later
             </button>
             <button className="flex items-center gap-2 hover:text-white">
               <FaShare /> Share
@@ -146,13 +162,11 @@ export default function VideoTestimonialsSection() {
     <section className="w-full bg-white bg-[linear-gradient(rgba(0,0,0,0.055)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.055)_1px,transparent_1px)] bg-[size:40px_40px] pt-16 sm:pt-20 pb-6">
       <div className="max-w-[1080px] mx-auto px-4 sm:px-6">
 
-        {/* Heading */}
         <h2 className="font-barlow font-[600] text-black text-xl sm:text-3xl md:text-4xl text-center mb-8 sm:mb-12">
           Systems Chosen By{" "}
           <span className="text-[#f35014]">Top Performing Affiliates</span>
         </h2>
 
-        {/* Cards */}
         <div className="flex justify-center gap-3 sm:gap-6 md:gap-8 flex-wrap sm:flex-nowrap">
           {videos.map((video) => (
             <VideoCard
@@ -164,7 +178,6 @@ export default function VideoTestimonialsSection() {
           ))}
         </div>
 
-        {/* Bottom Icon */}
         <div className="flex justify-center mt-10">
           <div className="flex flex-col items-center gap-2 text-[#ff4d14] text-xl sm:text-2xl animate-pulse">
             <FaArrowDownLong />
@@ -173,7 +186,6 @@ export default function VideoTestimonialsSection() {
           </div>
         </div>
 
-        {/* CTA */}
         <div className="relative z-10 w-full max-w-[1080px] mx-auto flex flex-col items-center text-center px-4 sm:px-6 lg:px-8 pt-10">
           <Ctablock />
         </div>

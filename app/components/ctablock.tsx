@@ -1,10 +1,35 @@
 
-import React from 'react'
+"use client";
+import { useEffect, useState } from "react";
 import { FaChair } from "react-icons/fa";
 
 export default function Ctablock() {
         const totalSeats = 10;
-  const seatsLeft = 8; // change dynamically if needed
+  const seatsLeft = 7; // change dynamically if needed
+
+    const [seats, setSeats] = useState(26);
+  const [animate, setAnimate] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSeats((prev) => {
+        if (prev <= 3) return prev;
+
+        // random decrease (1 to 3)
+        const decrease = Math.floor(Math.random() * 3) + 1;
+        const newValue = Math.max(prev - decrease, 3);
+
+        // trigger animation
+        setAnimate(true);
+        setTimeout(() => setAnimate(false), 500);
+
+        return newValue;
+      });
+    }, 30000); // 30 sec
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className='md:px-0'>
       
@@ -43,7 +68,7 @@ Start Building Your System For Just Rs.199
               className={`text-lg ${
                 index < seatsLeft
                   ? "text-[#f35014] drop-shadow-[0_0_6px_rgba(255,0,0,0.8)]"
-                  : "text-gray-700"
+                  : "text-gray-700 animate-pulse"
               }`}
             />
           ))}
@@ -53,12 +78,21 @@ Start Building Your System For Just Rs.199
         <div className="w-[1px] h-6 md:block hidden bg-gray-700" />
 
         {/* Seats Left Text */}
-        <div className="px-4 py-1  border border-[#f35014] rounded-full text-[#f35014] text-sm font-semibold tracking-wider bg-red-500/10">
-          {/* {seatsLeft * 5 + 2} SEATS LEFT */}
-          26 SEATS LEFT
-        </div>
+        <div
+      className={`px-4 py-1 border border-[#f35014] rounded-full text-[#f35014] text-sm font-semibold tracking-wider bg-red-500/10 inline-block transition-all duration-500 ${
+        animate ? "scale-110 bg-red-500/20" : "scale-100"
+      }`}
+    >
+      {seats} SEATS LEFT
+    </div>
       </div>
     </div>
     </div>
   )
 }
+
+
+
+
+
+

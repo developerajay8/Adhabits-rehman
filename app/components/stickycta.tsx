@@ -25,12 +25,18 @@ export default function StickyCTA() {
           </div>
 
           {/* BUTTON */}
-          <button className="bg-[#ff4d14] animate-pulse  hover:bg-[#ff6a3d] text-white font-semibold 
+             {/* ── CTA BUTTON — shakes every few seconds ── */}
+      <a 
+  href="https://superprofile.bio/vp/adhabits" 
+  target="_blank" 
+  rel="noopener noreferrer">
+          <button className="bg-[#ff4d14] cursor-pointer animate-pulse  hover:bg-[#ff6a3d] text-white font-semibold 
           px-5 sm:px-8 py-2 sm:py-3 rounded-xl 
           shadow-[0_0_20px_rgba(255,77,20,0.6)] 
           transition-all duration-300 whitespace-nowrap">
             Register Now
           </button>
+          </a>
 
         </div>
       </div>
