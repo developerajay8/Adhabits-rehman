@@ -51,7 +51,7 @@ export default function Ctablock() {
             Join The Affiliate Growth Masterclass
           </p>
           <p className="font-nunito font-semibold text-white/80 text-xs sm:text-sm md:text-base mt-1">
-Start Building Your System For Just Rs.199
+Start Building Your System For Just Rs.49
           </p>
         </button>
         </a>
