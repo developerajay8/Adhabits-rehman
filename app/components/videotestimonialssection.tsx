@@ -9,11 +9,13 @@ const videos = [
   {
     id: 1,
     src: "/videos/IMG_4275.MP4",
+    poster: "/image copy 5.png", // ✅ ADD THIS
     caption: "Hey this is...",
   },
   {
     id: 2,
     src: "/videos/IMG_5203.MP4",
+    poster: "/image copy 6.png", // ✅ ADD THIS
     caption: "I'm extremely...",
   },
 ];
@@ -43,26 +45,25 @@ function VideoCard({
     >
       {/* Active Video */}
       {isActive ? (
-  <video
-    src={video.src}
-    className="absolute inset-0 w-full h-full object-cover"
-    autoPlay
-    controls
-    playsInline
-  />
-) : (
+        <video
+          src={video.src}
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          controls
+          playsInline
+        />
+      ) : (
         <>
-          {/* ✅ VIDEO AS THUMBNAIL */}
+          {/* ✅ IMAGE AS THUMBNAIL (REPLACED VIDEO) */}
           <div className="absolute inset-0">
-           <video
-  src={video.src}
-  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-  muted
-  preload="metadata"
-/>
-            <div className="absolute inset-0 bg-[#f35014] " >
-              {/* <img src="image copy 3.png" className="h-full w-full" alt="" /> */}
-            </div>
+            <img
+              src={video.poster}
+              alt="thumbnail"
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+
+            {/* Overlay color (your existing one untouched) */}
+            <div className="absolute inset-0 bg-[#f35014]/10"></div>
           </div>
 
           {/* ▶ Play Button */}
@@ -126,15 +127,6 @@ function VideoCard({
           </div>
         </div>
       )}
-
-      {/* Caption */}
-      {/* <div className="absolute bottom-6 sm:bottom-10 left-0 right-0 px-2 sm:px-3 z-10">
-        <div className="inline-block bg-black/60 backdrop-blur-sm rounded-md px-2 py-1">
-          <p className="font-nunito text-white text-[10px] sm:text-sm font-semibold">
-            {video.caption}
-          </p>
-        </div>
-      </div> */}
     </div>
   );
 }
