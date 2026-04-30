@@ -14,9 +14,9 @@ export default function StickyCTA() {
           {/* LEFT TEXT */}
           <div className="flex flex-col">
             <p className="text-[#ff4d14] font-semibold text-lg sm:text-xl">
-              ₹49{" "}
+              ₹199{" "}
               <span className="text-white/40 line-through text-sm sm:text-base ml-2">
-                ₹499
+                ₹1999
               </span>
             </p>
             <p className="text-white/70 text-xs sm:text-sm">
